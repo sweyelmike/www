@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Jolly Savory | Restaurant website</title>
+  </head>
+  <body>
+    <header class="dark-header">
+      <div class="logo">
+        <img src="images/LogoMakerCa-1697951309404.png" alt="Restaurant Logo" />
+        <h1>JOLLY SAVORY</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#aboutus">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#reservation">Reservation</a></li>
+        </ul>
+      </nav>
+      <div id="menu-toggle" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("nav ul li a");
+
+    links.forEach((link) => {
+      link.addEventListener("click", smoothScroll);
+    });
+
+    function smoothScroll(event) {
+      event.preventDefault();
+
+      const targetId = this.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const offset = targetElement.offsetTop;
+        window.scrollTo({
+          top: offset,
+          behavior: "smooth",
+        });
+      }
+    }
+  });
+
+      const menuToggle = document.getElementById("menu-toggle");
+      const nav = document.querySelector("nav");
+
+      menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("show-menu");
+      });
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Restaurant Hero</title>
+    <script>
+      let currentImageIndex = 1;
+      const images = [
+        "restarunt-image1.jpg",
+        "restarunt-image2.jpg",
+        "restaurant-image3.jpg",
+      ];
+
+      function changeHeroImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        const heroImage = document.querySelector(".hero-image");
+        heroImage.src = images[currentImageIndex];
+      }
+
+      setInterval(changeHeroImage, 5); //change image every 5 seconds (adjust as needed)
+    </script>
+  </head>
+  <body>
+    <header class="dark-header">
+      <!-- Header content (as provided in the previous example) -->
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>South Indian Restaurant</h1>
+        <p>Feels like Home, Taste like Paradise</p>
+        <a href="#" class="cta-button">Make a Reservation</a>
+      </div>
+    </section>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Restaurant About Us</title>
+  </head>
+  <body>
+    <header class="dark-header">
+      <!-- Header content (as provided in the previous example) -->
+    </header>
+
+    <section class="about-us">
+      <div class="about-content">
+        <h2>About Us</h2>
+        <p id="about-description">
+          Welcome to Jolly Savory, where the flavors of India come to life! I'm
+          Swetha, and my love for authentic Indian cuisine inspired the creation
+          of this culinary haven. At Jolly Savory, we are passionate about
+          delivering the rich and diverse tastes of India to your plate. Our
+          dedicated team, led by our skilled chef, works tirelessly to ensure
+          every dish is a masterpiece of flavors and aromas. We take pride in
+          using the finest, locally sourced ingredients to create dishes that
+          transport you to the heart of India. Our goal is to offer you not just
+          a meal but an experience, where the warmth of Indian culture meets
+          your senses. Whether you're a long-time fan of Indian cuisine or new
+          to its delights, we invite you to savor the magic of Jolly Savory and
+          embark on a gastronomic journey like no other. Come join us, and let's
+          celebrate the joy of Indian flavors together!
+        </p>
+        <a href="javascript:void(0);" id="read-more" class="cta-button"
+          >Read More</a
+        >
+      </div>
+      <img
+        src="images/Picsart_23-10-22_14-42-24-114.jpg"
+        alt="Chef Image"
+        class="chef-image"
+        id="chef-image"
+      />
+      <img
+        src="images/Picsart_23-10-22_14-55-36-542.jpg"
+        alt="Chef Image2"
+        class="chef-image2"
+        id="chef-image2"
+      />
+    </section>
+    <script>
+      const aboutDescription = document.getElementById("about-description");
+      const readMoreButton = document.getElementById("read-more");
+      let expanded = false;
+
+      readMoreButton.addEventListener("click", () => {
+        if (expanded) {
+          aboutDescription.style.height = "60px";
+          readMoreButton.innerText = "Read More";
+        } else {
+          aboutDescription.style.height = "auto";
+          readMoreButton.innerText = "Read Less";
+        }
+        expanded = !expanded;
+      });
+
+      const chefImage = document.getElementById("chef-image");
+
+      chefImage.addEventListener("mouseover", () => {
+        chefImage.style.opacity = 0.7;
+      });
+
+      chefImage.addEventListener("mouseout", () => {
+        chefImage.style.opacity = 1;
+      });
+      const chefImage2 = document.getElementById("chef-image2");
+
+      chefImage2.addEventListener("mouseover", () => {
+        chefImage2.style.opacity = 0.7;
+      });
+
+      chefImage2.addEventListener("mouseout", () => {
+        chefImage2.style.opacity = 1;
+      });
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Restaurant Menu</title>
+  </head>
+  <body>
+    <header class="dark-header">
+      <!-- Header content (as provided in the previous example) -->
+    </header>
+
+    <section class="menu">
+      <h2>Sample Menu</h2>
+      <div class="menu-items">
+        <div class="menu-item"> 
+          <img src="images/chicken.jpg" alt="Mutton Biriyani" class="menu-image" />
+          <h3>Mutton Biriyani</h3>
+          <h4>
+            Mutton Biriyani is a flavorful South Asian dish made with tender
+            pieces of mutton.
+          </h4>
+          <p>
+            This traditional dish is known for its rich and savory taste, making
+            it a popular choice for those who enjoy a hearty and delicious meal.
+          </p>
+        </div>
+        <div class="menu-item">
+          <img src="images/dosa.jpg" alt="Dosa" class="menu-image"/>
+          <h3>Dosa</h3>
+          <h4>
+            Dosa is a popular South Indian crepe made from a fermented batter of
+            rice and urad dal.
+          </h4>
+          <p>
+            It is a versatile dish that can be enjoyed as a satisfying
+            breakfast,snack,or even a meal,loved for its delighted taste and
+            wide range of fillings and toppings.
+          </p>
+        </div>
+        <div class="menu-item">
+          <img src="images/mutton biriyani.jpg" alt="Chicken Biriyani" class="menu-image" />
+          <h3>Chicken Biriyani</h3>
+          <h4>
+            Chicken biriyani is a classic South Asian dish that combains
+            succulent pieces of chicken with aromatic spices.
+          </h4>
+          <p>
+            This iconic dish is a feast for the senses, embodying the rich
+            heritage of South Asian Cuisine.
+          </p>
+        </div>
+        <div class="menu-item">
+          <img src="images/naaan.jpg" alt="Butter Naan" class="menu-image"/>
+          <h3>Butter Nann</h3>
+          <h4>
+            Butter Nann is a soft and fluffy Indian flatbread that's loved for
+            its melt-in-the-mouth goodness.
+          </h4>
+          <p>
+            Each piece is generously brushed with creamy,aromatic
+            butter,creating a hevenly combination of flavors and textures.
+          </p>
+        </div>
+        <div class="menu-item">
+          <img src="images/meals.jpg" alt="Full Meals" class="menu-image"/>
+          <h3>Full Meals</h3>
+          <h4>Elevate your dining experience with our sumptuous Full Meals.</h4>
+          <p>
+            Whether you're a fan of itaditional cuisines or international
+            flavours,our Full Meals are a tantalizing journey for your
+            palate,leaving you fully satiated and delighted.
+          </p>
+        </div>
+        <div class="menus-item">
+          <img src="images/White Beige Modern Restaurant Menu_20231022_175952_0000.png"
+            alt="menu-card" class="menu-image"
+          />
+          <h3>Menu Card</h3>
+        </div>
+
+        <!-- Add more menu items as needed -->
+      </div>
+    </section>
+
+    <script>
+      const menuImage= document.querySelectorALL(".menu-image");
+
+      menuImages.forEach((image) => {
+        image.addEventListener("mouseover", () => {
+          //change the image style when hovered (you can adjust this as needed)
+          image.style.transform="scale(1.2)";
+          image.style.transition="transform 0.3s";
+        });
+
+        image.addEventListener("mouseout", () => {
+        //Revert the image style when not hovered
+          image.style.transform="scale(1)";
+      });
+    });
+      </script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Restaurant Reviews</title>
+  </head>
+  <body>
+    <header class="dark-header">
+      <!-- Header content (as provided in the previous example) -->
+    </header>
+
+    <section class="testimonials">
+      <h2>Testimonials</h2>
+      <div class="testimonial">
+        <img src="images/customer1.jpg" alt="Customer 1" />
+        <p>
+          "A wonderful dining experience! The food was amazing, and the service
+          was top-notch. We'll be back!"
+        </p>
+        <cite>- Pradeep Aarov</cite>
+      </div>
+      <div class="testimonial2">
+        <img src="images/customer2.jpg" alt="Customer 2" />
+        <p>
+          "The atmosphere is delightful, and the flavors are out of this world.
+          Highly recommended!"
+        </p>
+        <cite>- Shri.Vinay Mohan</cite>
+      </div>
+      <!-- Add more testimonials as needed -->
+    </section>
+    <script>
+        const testimonial = document.querySelectorAll(".testimonial");
+        let currentTestimonialIndex = 0;
+
+        function showTestimonial(index) {
+            testimonial.forEach((testimonial, i) => {
+                if (i === index) {
+                    testimonial.style.display = "block";
+                } else {
+                    testimonial.style.display = "none";
+                }
+            });
+        }
+
+        function nextTestimonial() {
+            currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+            showTestimonial(currentTestimonialIndex);
+        }
+
+        // Initial display
+        showTestimonial(currentTestimonialIndex);
+
+        // Automatically change testimonial every 5 seconds (adjust as needed)
+        setInterval(nextTestimonial, 5000);
+    </script>
+</body>
+</html>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Restaurant Gallery</title>
+  </head>
+  <body>
+    <header class="dark-header">
+      <!-- Header content (as provided in the previous example) -->
+    </header>
+
+    <section class="gallery">
+      <h2>Our Restaurant Interior</h2>
+      <div class="gallery-images">
+        <img src="images/Arghusk-4-754x500.jpg" alt="Image 1" />
+        <img src="images/Arghusk-5-750x500.jpg" alt="Image 2" />
+        <img src="images/Arghusk-7-750x500.jpg" alt="Image 3" />
+        <img src="images/Arghusk-6-750x500.jpg" alt="Image 4" />
+        <!-- Add more gallery images as needed -->
+      </div>
+    </section>
+    <script>
+        const galleryImages = document.querySelectorAll(".gallery-images img");
+        const lightbox = document.createElement("div");
+        lightbox.className = "lightbox";
+        
+        galleryImages.forEach((image, index) => {
+            image.addEventListener("click", () => {
+                const lightboxImage = document.createElement("img");
+                lightboxImage.src = image.src;
+                lightbox.innerHTML = "";
+                lightbox.appendChild(lightboxImage);
+                document.body.appendChild(lightbox);
+                lightbox.addEventListener("click", () => {
+                    lightbox.innerHTML = "";
+                    document.body.removeChild(lightbox);
+                });
+            });
+        });
+        const galleryImage = document.querySelectorAll(".gallery-images img");
+        let currentImageIndex1 = 0;
+
+        function showImage(index) {
+            galleryImage.forEach((image, i) => {
+                if (i === index) {
+                    image.style.opacity = 1;
+                } else {
+                    image.style.opacity = 0.7;
+                }
+            });
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            showImage(currentImageIndex);
+        }
+
+        // Initial display
+        showImage(currentImageIndex);
+
+        // Automatically change the image every 5 seconds (adjust as needed)
+        setInterval(nextImage, 5000);
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Restaurant Special Offers</title>
+  </head>
+  <body>
+    <header class="dark-header">
+      <!-- Header content (as provided in the previous example) -->
+    </header>
+
+    <section class="special-offers">
+      <h2>Special Offers & Events</h2>
+      <div class="offer">
+        <img
+          src="images/11062b_aba18e22f27e464da789d65eff5d5e37~mv2.jpg"
+          alt="Offer 1"
+        />
+        <h3>Wine Tasting with Indian Appetizers</h3>
+        <h4>Join us for our exclusive wine tasting event this weekend.</h4>
+        <p>
+          Explore Indian flavors with paired wines from our wine sommelier!
+          Enjoy it along with live music at our terrace!
+        </p>
+      </div>
+
+      <div class="offer2">
+        <img src="images/IMG_20231022_184546.jpg" alt="Offer 2" />
+        <h3>Happy Hour</h3>
+        <p>Happy Hour every weekday from 1 PM to 6 PM. Don't miss out!</p>
+      </div>
+      <!-- Add more offers/events as needed -->
+    </section>
+    <script>
+        function hoverOffer(offer) {
+            offer.style.opacity = 0.7; // Reduce opacity on hover
+        }
+
+        function unhoverOffer(offer) {
+            offer.style.opacity = 1; // Reset opacity when mouse leaves
+        }
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Restaurant Contact</title>
+    
+  </head>
+  <body>
+    <header class="dark-header">
+      <!-- Header content (as provided in the previous example) -->
+    </header>
+
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <p>
+          <strong>Address:</strong> Unit-1, Process House, Anna St, Chennai,
+          600034
+        </p>
+        <p><strong>Phone:</strong> 044 6600 2827</p>
+        <p><strong>Email:</strong> info@jollysavory.com</p>
+      </div>
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form id="contact-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.getElementById("contact-form");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const messageInput = document.getElementById("message");
+
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Validation: Check if name, email, and message are not empty
+            if (nameInput.value.trim() === "" || emailInput.value.trim() === "" || messageInput.value.trim() === "") {
+                alert("Please fill in all fields.");
+            } else {
+                // Send the form data to your server or process it as needed
+                alert("Form submitted successfully!");
+                contactForm.reset(); // Clear the form fields
+            }
+        });
+    });
+</script>
+    
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Restaurant Footer</title>
+</head>
+<body>
+    <header class="dark-header">
+        <!-- Header content (as provided in the previous examples) -->
+    </header>
+    
+    <!-- Content sections (as provided in previous examples) -->
+    
+    <footer class="dark-footer">
+        <div class="footer-logo">
+            <img src="Images/LogoMakerCa-1697951309404.png" alt="Restaurant Logo">
+            <h4>Jolly Savory</h4>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Accessibility</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="Images/facebook.png" alt="Facebook" class="social-icon"></a>
+            <a href="#"><img src="Images/google.png" alt="Google" class="social-icon"></a>
+            <a href="#"><img src="Images/pngtree-instagram-icon-png-image_6315974.png" alt="Instagram" class="social-icon"></a>
+        </div>
+    </footer>
+
+    <script>
+    // Function to show a pop-up message when a social media icon is clicked
+    function showPopup(media) {
+        alert("You clicked the " + media + " icon!");
+    }
+
+    // Add event listeners to the social media icons
+    const facebookIcon = document.querySelector(".social-media img[src='facebook-icon.png']");
+    const twitterIcon = document.querySelector(".social-media img[src='twitter-icon.png']");
+    const instagramIcon = document.querySelector(".social-media img[src='instagram-icon.png']");
+
+    facebookIcon.addEventListener("click", () => showPopup("Facebook"));
+    twitterIcon.addEventListener("click", () => showPopup("Twitter"));
+    instagramIcon.addEventListener("click", () => showPopup("Instagram"));
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Restaurant Reservation</title>
+  </head>
+  <body>
+    <header class="dark-header">
+      <!-- Header content (as provided in the previous examples) -->
+    </header>
+
+    <!-- Content sections (as provided in previous examples) -->
+
+    <section class="reservation">
+      <h2>Make a Reservation</h2>
+      <div class="reservation-form">
+        <form id="reservation-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required />
+          <label for="time">Time:</label>
+          <input type="time" id="time" name="time" required />
+          <label for="No of Persons">No of Persons:</label>
+          <input
+            type="number"
+            id="party-size"
+            name="No of persons"
+            min="1"
+            required
+          />
+          <label for="special-requests">Special Requests:</label>
+          <textarea id="special-requests" name="special-requests"></textarea>
+          <button type="submit">Submit Reservation</button>
+        </form>
+      </div>
+    </section>
+   <!-- Add this script tag just before the closing </body> tag -->
+<script>
+    // Function to handle form submission
+    function submitReservation(event) {
+        event.preventDefault(); // Prevent the form from submitting via HTTP
+
+        // Get form values
+        const name = document.getElementById("name").value;
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+        const partySize = document.getElementById("party-size").value;
+        const specialRequests = document.getElementById("special-requests").value;
+
+        // You can process the form data here, e.g., send it to a server, or display it to the user
+        console.log("Reservation Details:");
+        console.log("Name: " + name);
+        console.log("Date: " + date);
+        console.log("Time: " + time);
+        console.log("Party Size: " + partySize);
+        console.log("Special Requests: " + specialRequests);
+
+        // Optionally, you can display a confirmation message
+        alert("Reservation submitted successfully!");
+    }
+
+    // Attach the form submission handler to the form
+    const reservationForm = document.getElementById("reservation-form");
+    reservationForm.addEventListener("submit", submitReservation);
+</script>
+  </body>
+</html>
